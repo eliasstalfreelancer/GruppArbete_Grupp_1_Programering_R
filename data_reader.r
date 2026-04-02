@@ -12,3 +12,4 @@ colSums(is.na(ecommerce_orders))
 colSums(is.na(ecommerce_orders)) %>% 
   sort(decreasing = TRUE) %>% 
   .[. > 0]
+
