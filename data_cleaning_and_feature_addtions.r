@@ -1,4 +1,4 @@
-
+library(tidyverse)
 
 
 
@@ -11,6 +11,10 @@ replace_na_values <- function(ecommerce_orders){
       discount_pct = replace_na(discount_pct, median(discount_pct, na.rm = TRUE)),
       shipping_days = replace_na(shipping_days, median(shipping_days, na.rm = TRUE))
     )
+}
+convert_dups <- function(ecommerce_orders){
+  ecommerce_orders %>%
+    mutate(across(where(is.character), ~ str_to_lower(.)))
 }
 
 get_top_selling_categories <- function(clean_ecommerce_orders){
@@ -30,26 +34,30 @@ get_top_selling_subcategories <- function(clean_ecommerce_orders){
   
 }
 
-analyze_shipping_time_vs_returns <- function(clean_ecommerce_orders){
+
+analyze_product_subcategory_vs_returns <- function(clean_ecommerce_orders){
   clean_ecommerce_orders %>% 
-    mutate(returned = returned == "Yes") %>% #konverterar fall om det står yes till true
-    group_by(shipping_days) %>% 
+    mutate(returned = returned == "yes") %>% 
+    group_by(product_subcategory) %>% 
     summarise(
       return_rate = mean(returned),
       count = n()
-    ) %>%
-    arrange(shipping_days)
+    ) %>% 
+    mutate(
+      count_rate = count / sum(count)
+    ) %>% 
+    arrange(desc(return_rate))
 }
-
 analyze_unit_price_by_payment_method <- function(clean_ecommerce_orders){
   clean_ecommerce_orders %>% 
     mutate(revenue = unit_price * quantity) %>% 
     group_by(payment_method) %>%
     summarise(
       revenue_mean = mean(revenue),
-      count = n()
+      count = n(),
+      total = sum(revenue)
     )%>%
-    arrange(revenue_mean)
+    arrange(desc(total))
 }
 
 
