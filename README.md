@@ -10,7 +10,8 @@
 
 ## Frågeställningar:
 Vilka produktkategorier verkar driva högst försäljning?
-Finns det tecken på att längre leveranstid hänger ihop med fler returer?
+Hur skiljer sig returgrad mellan olika kategorier?
+
 Egen Frågeställningar:
 payment_method vs unit_price för att se fall om det finns en korrelation?
 
