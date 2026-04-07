@@ -24,6 +24,3 @@ run_eda <- function(df) {
   }
 }
 
-eda <- load_ecommerce_data()
-
-run_eda(eda)
