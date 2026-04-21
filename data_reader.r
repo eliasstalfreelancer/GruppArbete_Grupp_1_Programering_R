@@ -23,7 +23,3 @@ run_eda <- function(df) {
     print("Inga saknade värden funna!")
   }
 }
-
-
-
-
