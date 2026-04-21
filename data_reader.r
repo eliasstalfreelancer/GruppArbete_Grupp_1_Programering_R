@@ -22,12 +22,4 @@ run_eda <- function(df) {
   } else {
     print("Inga saknade värden funna!")
   }
-<<<<<<< HEAD
 }
-=======
-}
-
-
-
-
->>>>>>> main
