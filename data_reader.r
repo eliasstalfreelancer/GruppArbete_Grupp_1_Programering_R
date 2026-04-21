@@ -23,7 +23,3 @@ run_eda <- function(df) {
     print("Inga saknade värden funna!")
   }
 }
-
-eda <- load_ecommerce_data()
-
-run_eda(eda)
