@@ -1,6 +1,8 @@
 source("data_reader.R")
 source("data_cleaning_and_feature_addtions.R")
 source("analys.r")
+source("visualisering.r")
+
 #Load data
 ecommerce_orders_read <- load_ecommerce_data("data/ecommerce_orders.csv")
 
@@ -37,3 +39,12 @@ view(stat_summary$region_summary)
 
 # Visar statistisk sammanfattning uppdelad efter betalningsmetod.
 view(stat_summary$payment_summary)
+
+# Visar boxplot (Intäkt per kategori)
+best_category_box_graph(clean_data)
+
+# Visar (Return rate by subcategory)
+return_by_subcat(clean_data)
+
+# Visar (Intäkt per betalmetod samt antal)
+type_of_payment_method_graph(clean_data)

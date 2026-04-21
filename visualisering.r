@@ -25,12 +25,15 @@ best_category_box_graph <- function(df) {
     mutate(revenue = unit_price * quantity) %>%
     ggplot(aes(x = product_category, y = revenue)) +
     geom_boxplot() +
+    scale_y_continuous(breaks = c(100,500, 1000,1500, 2000,2500, 3000)) +
     labs(
       title = "Revenue by category",
       x = "Categories",
       y = "Revenue"
     )
 }
+
+
 # Samma som ovan fast som boxplot istället. För att se spridning
 # Välj enbart en av dessa två
 
@@ -78,3 +81,4 @@ type_of_payment_method_graph <- function(df) {
     )
 }
 # Visar intäkt per betalningsmetod samt antal gånger en den användts
+
