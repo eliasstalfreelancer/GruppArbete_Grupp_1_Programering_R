@@ -7,7 +7,7 @@ load_ecommerce_data <- function(filepath = "data/ecommerce_orders.csv") {
 
 # Funktion för EDA
 run_eda <- function(df) {
-
+  
   glimpse(df)
   
   print(summary(df))
@@ -22,4 +22,12 @@ run_eda <- function(df) {
   } else {
     print("Inga saknade värden funna!")
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+
+>>>>>>> main
