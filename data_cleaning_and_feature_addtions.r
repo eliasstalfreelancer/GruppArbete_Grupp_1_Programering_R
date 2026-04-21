@@ -1,7 +1,6 @@
 library(tidyverse)
 
 
-
 replace_na_values <- function(ecommerce_orders){
   ecommerce_orders %>% 
     mutate(
