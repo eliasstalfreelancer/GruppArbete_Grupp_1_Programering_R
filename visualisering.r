@@ -52,6 +52,26 @@ return_by_subcat <- function(df) {
       y = "Return rate"
     )
 }
+
+return_by_subcat_colur_by_cat <- function(df) {
+  analyze_product_subcategory_vs_returns(df) %>% 
+    ggplot(aes(
+      x = reorder(product_subcategory, return_rate),
+      y = return_rate,
+      fill = product_category
+    )) +
+    geom_col() +
+    coord_flip() +
+    scale_y_continuous(limits = c(0, 0.25), labels = scales::percent) +
+    labs(
+      title = "Return rate by subcategories",
+      x = "Subcategories",
+      y = "Return rate",
+      fill = "Category"
+    )
+}
+    
+
 # Visar vilken subcategory som har högst return rate
 
 

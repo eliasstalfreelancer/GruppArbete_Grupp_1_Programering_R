@@ -37,7 +37,7 @@ get_top_selling_subcategories <- function(clean_ecommerce_orders){
 analyze_product_subcategory_vs_returns <- function(clean_ecommerce_orders){
   clean_ecommerce_orders %>% 
     mutate(returned = returned == "yes") %>% 
-    group_by(product_subcategory) %>% 
+    group_by(product_subcategory,product_category) %>% 
     summarise(
       return_rate = mean(returned),
       count = n()

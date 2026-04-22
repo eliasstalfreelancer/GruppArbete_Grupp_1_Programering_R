@@ -41,7 +41,8 @@ view(stat_summary$region_summary)
 view(stat_summary$payment_summary)
 
 # Visar boxplot (Intäkt per kategori)
-best_category_box_graph(clean_data)
+#best_category_box_graph(clean_data)
+return_by_subcat_colur_by_cat(clean_data)
 
 # Visar (Return rate by subcategory)
 return_by_subcat(clean_data)
