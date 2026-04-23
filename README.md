@@ -1,3 +1,8 @@
+## Körning
+- Öppna upp i r-studio r-stuido projectet
+- Öppna main
+- tryck på source eller ctrl+shift+enter
+
 ## Anvsarsområden
 1) Dataförståelse: Jonas
 2) Datastädning och förberedelse: Elias
